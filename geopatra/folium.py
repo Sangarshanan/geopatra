@@ -305,8 +305,7 @@ def heatmap(
     else:
         data = list(zip(lat, lon))
     m = _folium_map(
-        gpd_copy, width, height, location, tiles=tiles,
-        attr=attr, zoom_start=zoom
+        gpd_copy, width, height, location, tiles=tiles, attr=attr, zoom_start=zoom
     )
 
     HeatMap(data, **style).add_to(m)
