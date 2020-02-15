@@ -31,4 +31,7 @@ jobs:
         pip install pytest
         pip install poetry
         poetry install --no-dev
-        pytest --verbose
+        poetry run pytest --verbose
+    - name: Sphinx Build
+      uses: ammaraskar/sphinx-action@0.3
+
