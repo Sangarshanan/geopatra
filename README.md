@@ -1,9 +1,8 @@
 ![alt text](https://github.com/Sangarshanan/geopatra/blob/master/docs/_static/geopatra.png "Geopatra")
 
 
-[![Documentation Status](https://readthedocs.org/projects/geopatra/badge/?version=latest)](https://geopatra.readthedocs.io/en/latest/?badge=latest)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sangarshanan/geopatra/issues) [![image](https://img.shields.io/pypi/v/geopatra.svg)](https://pypi.org/project/geopatra/) [![image](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black/)
-
+[![Documentation Status](https://readthedocs.org/projects/geopatra/badge/?version=latest)](https://geopatra.readthedocs.io/en/latest/?badge=latest) [![image](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black/)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sangarshanan/geopatra/issues) [![image](https://img.shields.io/pypi/v/geopatra.svg)](https://pypi.org/project/geopatra/) 
 
 
 > :warning: **This package is still an early protoype**: Will be working on making it better, beware of bad code  
