@@ -11,7 +11,9 @@
 
 Create Interactive maps 🗺️ with your geodataframe
 
-Geopatra attempts to wrap the goodness of Folium, Plotly, Kepler.gl and maybe even more amazing libraries for rapidly creating interactive maps with Geodataframes
+Geopatra attempts to wrap the goodness of Folium, Plotly, Kepler.gl and maybe even more amazing libraries (Bokeh, Altair) for rapidly creating interactive maps with Geodataframes
+
+You can already create interactive maps easily with geopandas and Folium/ Plotly/ Kepler.gl. Geopatra is merely meant to make this easier and is more geared towards ease and currently does not support complex maps or intricate style control
 
 
 ## Installation 
@@ -24,12 +26,20 @@ pip install geopatra
 
 ## Basic Usage
 
-To quickly plot a geodataframe with folium 
+To quickly plot a geodataframe with folium, you gotta understand workflows in geopandas and folium.
 
-```
-import geopatra
+```python
+import folium
 import geopandas
 world = geopandas.read_file(geopandas.datasets.get_path('naturalearth_lowres'))
+m = folium.Map(location = [4,10], zoom_start = 3)
+folium.GeoJson(world.__geo_interface__).add_to(m)
+```
+
+With Geopatra all the parameters you set with folium become optional so you don't have to care about folium   
+
+```python
+import geopatra
 m = world.folium.plot()
 ```
 Now you have a folium map object, which you can now use for more complex mapflows 
@@ -38,16 +48,22 @@ Check out [docs](https://geopatra.readthedocs.io/en/latest/geopatra.html) for mo
 
 ## Development 
 
-This package uses the awesome [poetry](https://github.com/python-poetry/poetry)
+Clone the repo
+```git
+git clone git@github.com:Sangarshanan/geopatra.git
+```
+
+Run ```pre-commit install``` to install pre-commit into your git hooks. pre-commit will now run on every commit
+
+Install the package with the amazing [poetry](https://github.com/python-poetry/poetry)
 
 ```
-git clone git@github.com:Sangarshanan/geopatra.git
 poetry install
 ```
 
-## TODO
+Make the bla-bla-bla changes to code and run the tests, Once merged to master build and publish
 
-- Clean up existing code 
-- Add more folium maps
-- Try to set up similar flows with plotly express and Kepler.gl
-
+```
+poetry build
+poetry publish
+```
