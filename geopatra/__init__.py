@@ -1,3 +1,5 @@
-__version__ = "0.1.1"
+# flake8: noqa
 
-from geopatra.map import InteraciveMap
+__version__ = "0.1.2"
+
+from .map import InteractiveMap
