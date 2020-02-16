@@ -1,8 +1,13 @@
 [tool.poetry]
 name = "geopatra"
-version = "0.1.1"
-description = ""
+version = "0.1.2"
+description = "Interactive Maps with Geopandas "
 authors = ["sangarshanan <sangarshanan1998@gmail.com>"]
+
+readme = "README.md"
+
+repository = "https://github.com/Sangarshanan/geopatra"
+documentation = "https://geopatra.readthedocs.io/"
 
 [tool.poetry.dependencies]
 python = "^3.6"
