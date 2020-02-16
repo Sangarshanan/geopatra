@@ -4,12 +4,11 @@ python:
 matrix:
   include:
 
-  - name: test sphinx docs
+  - name: build docs
 
   # Testing Python versions
   - python: "3.6"
   - python: "3.7"
-  - python: "3.8"
 
 addons:
   apt:
