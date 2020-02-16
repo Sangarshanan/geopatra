@@ -1,49 +1,19 @@
 language: python
 python:
-  - "3.8"
-matrix:
-  include:
-
-  - name: default Python + latest Sphinx
-
-  # a few older Sphinx releases using default Python version
-  - env: SPHINX="==1.8.1" BIBTEX="==0.4.2"
-  - env: SPHINX="==1.8.5" BIBTEX="==0.4.2"
-  - env: SPHINX="==2.0.0"
-  - env: SPHINX="==2.1.0"
-  - env: SPHINX="==2.2.0"
-
-  # a few Python versions using latest Sphinx release
-  - python: "3.5"
-  - python: "3.6"
-  - python: "3.7"
-
-  - name: default Python + latest Sphinx
-    os: osx
-    language: generic
-    python: ""
-
+  - "3.7"
 addons:
   apt:
     packages:
       - pandoc
       - librsvg2-bin
-  homebrew:
-    update: true
-    packages:
-      - python
-      - pandoc
-      - librsvg
-before_install:
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew link --overwrite python; fi
+# command to install dependencies
 install:
   - python3 --version
-  - python3 -m pip install Sphinx$SPHINX
+  - python3 -m pip install Sphinx2.4.1
   - python3 -m pip install .
   - python3 -m pip install $(grep -iv bibtex docs/requirements.txt)
   - python3 -m pip install sphinxcontrib-bibtex$BIBTEX
+# command to run tests
 script:
   - python3 -m nbsphinx
   - python3 -m sphinx docs/ docs/_build/ -W -b html
-  - python3 -m sphinx docs/ docs/_build/ -W -b latex
-  - python3 -m sphinx docs/ doc/_build/ -W -b epub
