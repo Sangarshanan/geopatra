@@ -9,7 +9,7 @@ addons:
 # command to install dependencies
 install:
   - python3 --version
-  - python3 -m pip install Sphinx2.4.1
+  - python3 -m pip install Sphinx
   - python3 -m pip install .
   - python3 -m pip install $(grep -iv bibtex docs/requirements.txt)
   - python3 -m pip install sphinxcontrib-bibtex$BIBTEX
