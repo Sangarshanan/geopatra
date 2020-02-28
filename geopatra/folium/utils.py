@@ -1,6 +1,7 @@
 """Folium Utilities."""
 
 import random
+import string
 import folium
 from branca.colormap import linear
 
@@ -41,10 +42,12 @@ def _random_color_hex(n):
     return colors
 
 
-def _get_tooltip(tooltip, gpd):
+def _get_tooltip(tooltip, gpd, color_column=None):
     """Show everything or columns in the list."""
     if tooltip is None:
         tooltip = list(gpd.__geo_interface__["features"][0]["properties"].keys())
+    if color_column:
+        tooltip.remove(color_column)
     return tooltip
 
 
@@ -72,3 +75,9 @@ def _get_lat_lon(df):
     df["latitude"] = [latlon.y for latlon in df[col]]
     df["longitude"] = [latlon.x for latlon in df[col]]
     return df
+
+
+def _random_string(length):
+    """Generate random string."""
+    res = "".join(random.choices(string.ascii_uppercase + string.digits, k=length))
+    return res

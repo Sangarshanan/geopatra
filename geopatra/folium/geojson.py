@@ -1,7 +1,7 @@
 """Folium geojson Plot."""
 
 import folium
-from .utils import _random_color_hex, _folium_map, _get_tooltip
+from .utils import _random_color_hex, _folium_map, _get_tooltip, _random_string
 
 
 def geojson(
@@ -41,12 +41,13 @@ def geojson(
     m : folium.map
     """
     gpd_copy = gdf.copy()
+    color_column = "color{}".format(_random_string(4))
     if isinstance(color, list):
-        gpd_copy["color"] = color
+        gpd_copy[color_column] = color
     elif color.lower() == "random":
-        gpd_copy["color"] = _random_color_hex(len(gdf))
+        gpd_copy[color_column] = _random_color_hex(len(gdf))
     else:
-        gpd_copy["color"] = [color] * len(gpd_copy)
+        gpd_copy[color_column] = [color] * len(gpd_copy)
 
     geo_json = gpd_copy.__geo_interface__
 
@@ -55,8 +56,10 @@ def geojson(
     )
     folium.GeoJson(
         geo_json,
-        tooltip=folium.GeoJsonTooltip(fields=_get_tooltip(tooltip, gpd_copy)),
-        style_function=lambda x: {"color": x["properties"]["color"], **style},
+        tooltip=folium.GeoJsonTooltip(
+            fields=_get_tooltip(tooltip, gpd_copy, color_column)
+        ),
+        style_function=lambda x: {"color": x["properties"][color_column], **style},
         name=name,
     ).add_to(m)
     return m
