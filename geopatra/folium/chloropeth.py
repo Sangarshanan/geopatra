@@ -1,7 +1,7 @@
 """Folium chloropeth Plot."""
 
 import folium
-from .utils import _get_color_map, _folium_map, _get_tooltip
+from .utils import _get_color_map, _folium_map, _get_tooltip, _random_string
 
 
 def chloropeth(
@@ -51,7 +51,7 @@ def chloropeth(
     gpd_copy = gdf.copy()
     colormap = _get_color_map(color, legend, gpd_copy, color_by)
     if not index_col:
-        object_col = "unique_index"
+        object_col = "index_{}".format(_random_string(4))
         gpd_copy[object_col] = range(0, len(gpd_copy))
     else:
         object_col = index_col

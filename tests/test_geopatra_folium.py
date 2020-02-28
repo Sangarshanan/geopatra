@@ -28,6 +28,13 @@ class TestFolium:
 
         assert chloropeth_map.location == [0.0, 0.0]
 
+        # without index
+        chloropeth_map = folium.chloropeth(
+            self.world, location=[0, 0], color_by="pop_est"
+        )
+
+        assert chloropeth_map.location == [0.0, 0.0]
+
     def test_markercluster_plots(self):
         """Test markercluster plot."""
         markercluster_map = folium.markercluster(self.cities, location=[10, 20])
