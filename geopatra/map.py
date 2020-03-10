@@ -21,6 +21,11 @@ class InteractiveMap:
         m = folium.geojson(self._gdf, **kwargs)
         return m
 
+    def circle(self, **kwargs):
+        """Plot geodataframe as a geojson."""
+        m = folium.circle(self._gdf, **kwargs)
+        return m
+
     def chloropeth(self, **kwargs):
         """Plot geodataframe as a chloropeth."""
         m = folium.chloropeth(self._gdf, **kwargs)

@@ -82,7 +82,7 @@ sum_function = """
 
 
 def markercluster(
-    df,
+    gdf,
     weight=None,
     metric=None,
     name="layer",
@@ -121,7 +121,7 @@ def markercluster(
     -------
     m : folium.map
     """
-    gpd_copy = _get_lat_lon(df.copy())
+    gpd_copy = _get_lat_lon(gdf.copy())
     m = _folium_map(
         gpd_copy, width, height, location, tiles=tiles, attr=attr, zoom_start=zoom
     )
