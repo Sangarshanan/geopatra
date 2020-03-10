@@ -1,6 +1,7 @@
 # flake8: noqa
 
 from .geojson import geojson
+from .circle import circle
 from .chloropeth import chloropeth
 from .markercluster import markercluster
 from .heatmap import heatmap

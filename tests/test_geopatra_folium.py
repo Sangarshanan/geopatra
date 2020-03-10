@@ -20,6 +20,15 @@ class TestFolium:
             "preferCanvas": False,
         }
 
+    def test_circle_plots(self):
+        """Test folium plot."""
+        circle_map = folium.circle(self.cities, zoom=5)
+        assert circle_map.options == {
+            "zoom": 5,
+            "zoomControl": True,
+            "preferCanvas": False,
+        }
+
     def test_chloropeth_plots(self):
         """Test chloropeth plot."""
         chloropeth_map = folium.chloropeth(
