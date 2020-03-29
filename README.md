@@ -6,7 +6,7 @@
 
 Create Interactive maps 🗺️ with your geodataframe
 
-Geopatra attempts to wrap the goodness of Folium, Plotly, Kepler.gl and maybe even more amazing libraries (Bokeh, Altair) for rapidly creating interactive maps with Geodataframes
+Geopatra attempts to wrap the goodness of interactive mapping libraries like Folium, Plotly, Kepler.gl, hvplot etc for rapidly creating interactive maps with Geodataframes
 
 You can already create interactive maps easily with geopandas and Folium/ Plotly/ Kepler.gl. Geopatra is merely meant to make this easier and is more geared towards ease and currently does not support complex maps or intricate style control
 
