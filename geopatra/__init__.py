@@ -2,4 +2,4 @@
 
 __version__ = "0.1.3"
 
-from .map import InteractiveMap
+from .map import InteractiveMapFolium, InteractiveMapKepler
