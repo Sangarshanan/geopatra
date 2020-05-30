@@ -13,6 +13,7 @@ documentation = "https://geopatra.readthedocs.io/"
 python = "^3.6"
 folium = "^0.10.1"
 geopandas = "^0.6.2"
+keplergl = "^0.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

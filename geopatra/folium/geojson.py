@@ -56,9 +56,7 @@ def geojson(
     )
     folium.GeoJson(
         geo_json,
-        tooltip=folium.GeoJsonTooltip(
-            fields=_get_tooltip(tooltip, gpd_copy, color_column)
-        ),
+        tooltip=folium.GeoJsonTooltip(fields=_get_tooltip(tooltip, gdf)),
         style_function=lambda x: {"color": x["properties"][color_column], **style},
         name=name,
     ).add_to(m)
