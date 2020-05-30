@@ -46,12 +46,11 @@ def circle(
     -------
     m : folium.map
     """
-    ignore_col = ["latitude", "longitude"]
     gpd_copy = _get_lat_lon(gdf.copy())
     m = _folium_map(
         gpd_copy, width, height, location, tiles=tiles, attr=attr, zoom_start=zoom
     )
-    tooltip_cols = _get_tooltip(tooltip, gpd_copy, ignore_col)
+    tooltip_cols = _get_tooltip(tooltip, gdf)
     for index, row in gpd_copy.iterrows():
         tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip_cols}
         tooltip = "".join(

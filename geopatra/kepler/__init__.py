@@ -14,5 +14,5 @@ Interactive maps with kepler.gl
 Build an interface for geodataframes to work natively with Kepler.gl 
 Supported Maps
 -------------
-  - Geojson plots (Just plot the geometries in geodataframes)
+  - Geojson plots (Plot the geometries in geodataframes)
 """

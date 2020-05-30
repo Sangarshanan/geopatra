@@ -42,16 +42,10 @@ def _random_color_hex(n):
     return colors
 
 
-def _get_tooltip(tooltip, gpd, ignore_col=None):
+def _get_tooltip(tooltip, gpd):
     """Show everything or columns in the list."""
     if tooltip is None:
         tooltip = list(gpd.__geo_interface__["features"][0]["properties"].keys())
-    if ignore_col:
-        tooltip = [
-            tooltip_column
-            for tooltip_column in tooltip
-            if tooltip_column not in tuple(ignore_col)
-        ]
     return tooltip
 
 
