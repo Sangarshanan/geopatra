@@ -3,6 +3,7 @@
 import random
 import string
 import folium
+import importlib
 from branca.colormap import linear
 
 
@@ -42,10 +43,12 @@ def _random_color_hex(n):
     return colors
 
 
-def _get_tooltip(tooltip, gpd):
+def _get_tooltip(tooltip_col, gpd):
     """Show everything or columns in the list."""
-    if tooltip is None:
-        tooltip = list(gpd.__geo_interface__["features"][0]["properties"].keys())
+    if tooltip_col is not None:
+        tooltip = folium.GeoJsonTooltip(fields=tooltip_col)
+    else:
+        tooltip = tooltip_col
     return tooltip
 
 
@@ -59,9 +62,13 @@ def _get_color_map(color, legend, gpd, color_by):
         colormap = linear.OrRd_09.scale(min_val, max_val)
     elif color == "blue":
         colormap = linear.PuBu_09.scale(min_val, max_val)
+    elif hasattr(linear, f"{color}_09"):
+        linear_cmap = getattr(
+            getattr(importlib.import_module("branca.colormap"), "linear"), f"{color}_09"
+        )
+        colormap = linear_cmap.scale(min_val, max_val)
     else:
         colormap = color
-
     if legend:
         colormap.caption = legend
     return colormap

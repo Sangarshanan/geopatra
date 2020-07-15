@@ -61,9 +61,9 @@ def chloropeth(
     )
     color_dict = {key: colormap(layer_dict[key]) for key in layer_dict.keys()}
     folium.GeoJson(
-        gpd_copy.__geo_interface__,
+        gpd_copy,
         name=name,
-        tooltip=folium.GeoJsonTooltip(fields=_get_tooltip(tooltip, gpd_copy)),
+        tooltip=_get_tooltip(tooltip, gpd_copy),
         style_function=lambda feature: {
             "fillColor": color_dict[feature["properties"][object_col]],
             **style,

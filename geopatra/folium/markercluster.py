@@ -128,7 +128,7 @@ def markercluster(
     if weight is None:
         marker_cluster = MarkerCluster(**kwargs).add_to(m)
         for index, row in gpd_copy.iterrows():
-            tooltip_cols = _get_tooltip(tooltip, gpd_copy)
+            tooltip_cols = tooltip
             tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip_cols}
             tooltip = "".join(
                 [
