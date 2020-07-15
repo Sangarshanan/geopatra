@@ -64,8 +64,7 @@ def _get_color_map(color, legend, gpd, color_by):
         colormap = linear.PuBu_09.scale(min_val, max_val)
     elif hasattr(linear, f"{color}_09"):
         linear_cmap = getattr(
-            getattr(importlib.import_module("branca.colormap"), "linear"),
-            f"{color}_09",
+            getattr(importlib.import_module("branca.colormap"), "linear"), f"{color}_09"
         )
         colormap = linear_cmap.scale(min_val, max_val)
     else:
