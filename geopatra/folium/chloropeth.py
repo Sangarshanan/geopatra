@@ -63,7 +63,7 @@ def chloropeth(
     folium.GeoJson(
         gpd_copy.__geo_interface__,
         name=name,
-        tooltip=folium.GeoJsonTooltip(fields=_get_tooltip(tooltip, gpd_copy)),
+        tooltip=_get_tooltip(tooltip, gdf),
         style_function=lambda feature: {
             "fillColor": color_dict[feature["properties"][object_col]],
             **style,

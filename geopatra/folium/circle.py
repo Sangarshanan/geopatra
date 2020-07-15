@@ -50,15 +50,17 @@ def circle(
     m = _folium_map(
         gpd_copy, width, height, location, tiles=tiles, attr=attr, zoom_start=zoom
     )
-    tooltip_cols = _get_tooltip(tooltip, gdf)
     for index, row in gpd_copy.iterrows():
-        tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip_cols}
-        tooltip = "".join(
-            [
-                "<p><b>{}</b> {}</p>".format(keyvalue[0], keyvalue[1])
-                for keyvalue in list(tooltip_dict.items())
-            ]
-        )
+        if tooltip is not None:
+            tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip}
+            tooltip = "".join(
+                [
+                    "<p><b>{}</b> {}</p>".format(keyvalue[0], keyvalue[1])
+                    for keyvalue in list(tooltip_dict.items())
+                ]
+            )
+        else:
+            tooltip = _get_tooltip(tooltip, gdf)
         if fill_color in list(gpd_copy.columns):
             fill_color = row[fill_color]
         if color in list(gpd_copy.columns):
