@@ -42,10 +42,12 @@ def _random_color_hex(n):
     return colors
 
 
-def _get_tooltip(tooltip, gpd):
+def _get_tooltip(tooltip_col, gpd):
     """Show everything or columns in the list."""
-    if tooltip is None:
-        tooltip = list(gpd.__geo_interface__["features"][0]["properties"].keys())
+    if tooltip_col is not None:
+        tooltip = folium.GeoJsonTooltip(fields=tooltip_col)
+    else:
+        tooltip = tooltip_col
     return tooltip
 
 

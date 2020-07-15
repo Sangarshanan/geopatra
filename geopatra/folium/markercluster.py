@@ -6,7 +6,7 @@ from folium import Marker
 from jinja2 import Template
 from folium.plugins import MarkerCluster
 
-from .utils import _get_lat_lon, _folium_map, _get_tooltip
+from .utils import _get_lat_lon, _folium_map
 
 
 class MarkerWithProps(Marker):
@@ -128,14 +128,14 @@ def markercluster(
     if weight is None:
         marker_cluster = MarkerCluster(**kwargs).add_to(m)
         for index, row in gpd_copy.iterrows():
-            tooltip_cols = _get_tooltip(tooltip, gpd_copy)
-            tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip_cols}
-            tooltip = "".join(
-                [
-                    "<p><b>{}</b> {}</p>".format(keyvalue[0], keyvalue[1])
-                    for keyvalue in list(tooltip_dict.items())
-                ]
-            )
+            if tooltip is not None:
+                tooltip_dict = {k: v for k, v in dict(row).items() if k in tooltip}
+                tooltip = "".join(
+                    [
+                        "<p><b>{}</b> {}</p>".format(keyvalue[0], keyvalue[1])
+                        for keyvalue in list(tooltip_dict.items())
+                    ]
+                )
             folium.Marker(
                 location=[row["latitude"], row["longitude"]], tooltip=tooltip
             ).add_to(marker_cluster)

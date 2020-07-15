@@ -7,8 +7,8 @@ from .utils import _random_color_hex, _folium_map, _get_tooltip, _random_string
 def geojson(
     gdf,
     name="layer",
-    width=950,
-    height=550,
+    width="100%",
+    height="100%",
     location=None,
     color="blue",
     tooltip=None,
@@ -56,7 +56,7 @@ def geojson(
     )
     folium.GeoJson(
         geo_json,
-        tooltip=folium.GeoJsonTooltip(fields=_get_tooltip(tooltip, gdf)),
+        tooltip=_get_tooltip(tooltip, gdf),
         style_function=lambda x: {"color": x["properties"][color_column], **style},
         name=name,
     ).add_to(m)
