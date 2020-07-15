@@ -2,7 +2,7 @@
 
 
 import geopandas
-from geopatra import folium
+from geopatra.folium import FoliumMap
 from geopatra import kepler
 
 
@@ -17,30 +17,9 @@ class InteractiveMapFolium:
         """Init InteractiveMap with geodataframe."""
         self._gdf = geopandas_obj
 
-    def plot(self, **kwargs):
-        """Plot geodataframe as a geojson."""
-        m = folium.geojson(self._gdf, **kwargs)
-        return m
-
-    def circle(self, **kwargs):
-        """Plot geodataframe as a geojson."""
-        m = folium.circle(self._gdf, **kwargs)
-        return m
-
-    def chloropeth(self, **kwargs):
-        """Plot geodataframe as a chloropeth."""
-        m = folium.chloropeth(self._gdf, **kwargs)
-        return m
-
-    def markercluster(self, **kwargs):
-        """Plot geodataframe as a markercluster."""
-        m = folium.markercluster(self._gdf, **kwargs)
-        return m
-
-    def heatmap(self, **kwargs):
-        """Plot geodataframe as a heatmap."""
-        m = folium.heatmap(self._gdf, **kwargs)
-        return m
+    def plot(self, kind=None, **kwargs):
+        """Plot geodataframe wih folium."""
+        return FoliumMap(kind)(self._gdf, **kwargs)
 
 
 @geopandas.tools.util.pd.api.extensions.register_dataframe_accessor("kepler")

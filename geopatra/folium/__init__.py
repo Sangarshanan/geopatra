@@ -6,15 +6,17 @@ from .chloropeth import chloropeth
 from .markercluster import markercluster
 from .heatmap import heatmap
 
+from .main import FoliumMap
+
 # module level doc-string
 __doc__ = """
-Interactive maps with folium
+Interactive maps with Folium
 =============================
-Build an interface for geodataframes to work natively with Folium 
-Supported Maps
+Interface for geodataframes to work natively with Folium 
+Supported Map kinds
 -------------
-  - Geojson plots (Just plot the geometries in geodataframes)
-  - Chloropeth maps 
+  - Default geojson plots (Just plot the geometries in geodataframes)
+  - Circle plots (Points as circles)
   - Markercluster (Count, Sum, Average)
-  - Heatmaps 
+  - Heatmaps
 """
