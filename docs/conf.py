@@ -4,8 +4,6 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-from geopatra import __version__ as version
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -22,10 +20,6 @@ from geopatra import __version__ as version
 project = "Geopatra"
 copyright = "2020, sangarshanan"
 author = "sangarshanan"
-
-# The full version, including alpha/beta/rc tags
-release = version
-
 
 # -- General configuration ---------------------------------------------------
 
