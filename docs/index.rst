@@ -5,16 +5,21 @@
 
 Geopatra: Map your geodataframe !
 ====================================
-.. image:: https://img.shields.io/pypi/v/geopatra.svg
-    :target: https://pypi.org/project/geopatra/
+.. image:: https://travis-ci.com/Sangarshanan/geopatra.svg?branch=master
+    :target: https://travis-ci.com/Sangarshanan/geopatra
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/ambv/black
 
+.. image:: https://img.shields.io/pypi/pyversions/geopatra
+
+.. image:: https://img.shields.io/pypi/v/geopatra.svg
+    :target: https://pypi.org/project/geopatra/
+
 
 Create Interactive maps 🗺️ with your geodataframe
 
-Geopatra attempts to wrap the goodness of interactive mapping libraries like Folium, Plotly, Kepler.gl, hvplot etc for rapidly creating interactive maps with Geodataframes
+Geopatra extends geopandas for interactive mapping and attempts to wrap the goodness of amazing mapping libraries like Folium, Plotly, Kepler.gl, hvplot etc for rapidly creating interactive maps with Geodataframes
 
 You can already create interactive maps easily with geopandas and Folium/ Plotly/ Kepler.gl. Geopatra is merely meant to make this easier and is more geared towards ease and currently does not support complex maps or intricate style control
 
