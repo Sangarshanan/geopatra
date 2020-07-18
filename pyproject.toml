@@ -14,8 +14,8 @@ keywords = ["geopandas", "geospatial", "interactive maps"]
 [tool.poetry.dependencies]
 importlib-metadata = {version = "^1.0", python = "<3.8"}
 python = "^3.6"
-folium = "^0.10.1"
-geopandas = "^0.6.2"
+folium = "^0.11.0"
+geopandas = "^0.8.0"
 keplergl = "^0.1.2"
 
 [tool.poetry.dev-dependencies]

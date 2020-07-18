@@ -41,7 +41,7 @@ Now you have a folium map object, which you can now use for more complex mapflow
 
 Check out [docs](https://geopatra.readthedocs.io/en/latest/geopatra.html) for more examples
 
-## Development 
+## Development
 
 Clone the repo
 ```git
@@ -63,3 +63,8 @@ poetry build
 poetry publish
 ```
 
+To update versions
+
+```
+poetry add geopandas@^0.8.0
+```
