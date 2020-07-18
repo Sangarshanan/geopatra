@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "geopatra"
 version = "0.1.3"
-description = "Interactive Maps with Geopandas "
+description = "Interactive Maps with Geopandas"
 authors = ["sangarshanan <sangarshanan1998@gmail.com>"]
 
 readme = "README.md"
@@ -9,7 +9,10 @@ readme = "README.md"
 repository = "https://github.com/Sangarshanan/geopatra"
 documentation = "https://geopatra.readthedocs.io/"
 
+keywords = ["geopandas", "geospatial", "interactive maps"]
+
 [tool.poetry.dependencies]
+importlib-metadata = {version = "^1.0", python = "<3.8"}
 python = "^3.6"
 folium = "^0.10.1"
 geopandas = "^0.6.2"
