@@ -6,12 +6,12 @@
 
 Create Interactive maps 🗺️ with your geodataframe
 
-Geopatra attempts to wrap the goodness of interactive mapping libraries like Folium, Plotly, Kepler.gl, hvplot etc for rapidly creating interactive maps with Geodataframes
+Geopatra extends geopandas for interactive mapping and attempts to wrap the goodness of amazing mapping libraries like Folium, Plotly, Kepler.gl, hvplot etc for rapidly creating interactive maps with Geodataframes
 
 You can already create interactive maps easily with geopandas and Folium/ Plotly/ Kepler.gl. Geopatra is merely meant to make this easier and is more geared towards ease and currently does not support complex maps or intricate style control
 
 
-## Installation 
+## Installation
 
 Everything is always a pip away
 
@@ -56,7 +56,7 @@ Install the package with the amazing [poetry](https://github.com/python-poetry/p
 poetry install
 ```
 
-Make the bla-bla-bla changes to code and run the tests, Once merged to master build and publish
+Make the bla-bla-bla changes to code and run the tests and when full moon is nigh, build & publish
 
 ```
 poetry build
