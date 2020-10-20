@@ -14,7 +14,7 @@ Build an interface for geodataframes to work natively with Folium
 Supported Maps
 -------------
   - Geojson plots (Just plot the geometries in geodataframes)
-  - Chloropeth maps 
+  - Choropleth maps
   - Markercluster (Count, Sum, Average)
   - Heatmaps 
 """

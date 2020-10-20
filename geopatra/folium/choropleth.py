@@ -21,7 +21,7 @@ def choropleth(
     style={},
 ):
     """
-    Plot a Chloropeth map out of a geodataframe.
+    Plot a Choropleth map out of a geodataframe.
 
     Parameters
     ----------
