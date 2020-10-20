@@ -2,7 +2,7 @@
 
 from .geojson import geojson
 from .circle import circle
-from .chloropeth import chloropeth
+from .choropleth import choropleth
 from .markercluster import markercluster
 from .heatmap import heatmap
 

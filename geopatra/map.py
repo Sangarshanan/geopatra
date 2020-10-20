@@ -27,9 +27,9 @@ class InteractiveMapFolium:
         m = folium.circle(self._gdf, **kwargs)
         return m
 
-    def chloropeth(self, **kwargs):
-        """Plot geodataframe as a chloropeth."""
-        m = folium.chloropeth(self._gdf, **kwargs)
+    def choropleth(self, **kwargs):
+        """Plot geodataframe as a choropleth."""
+        m = folium.choropleth(self._gdf, **kwargs)
         return m
 
     def markercluster(self, **kwargs):

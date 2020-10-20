@@ -29,20 +29,20 @@ class TestFolium:
             "preferCanvas": False,
         }
 
-    def test_chloropeth_plots(self):
-        """Test chloropeth plot."""
-        chloropeth_map = folium.chloropeth(
+    def test_choropleth_plots(self):
+        """Test choropleth plot."""
+        choropleth_map = folium.choropleth(
             self.world, location=[0, 0], color_by="pop_est", index_col="name"
         )
 
-        assert chloropeth_map.location == [0.0, 0.0]
+        assert choropleth_map.location == [0.0, 0.0]
 
         # without index
-        chloropeth_map = folium.chloropeth(
+        choropleth_map = folium.choropleth(
             self.world, location=[0, 0], color_by="pop_est"
         )
 
-        assert chloropeth_map.location == [0.0, 0.0]
+        assert choropleth_map.location == [0.0, 0.0]
 
     def test_markercluster_plots(self):
         """Test markercluster plot."""

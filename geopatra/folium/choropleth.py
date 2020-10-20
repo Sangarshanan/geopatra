@@ -1,10 +1,10 @@
-"""Folium chloropeth Plot."""
+"""Folium choropleth Plot."""
 
 import folium
 from .utils import _get_color_map, _folium_map, _get_tooltip, _random_string
 
 
-def chloropeth(
+def choropleth(
     gdf,
     color_by,
     index_col=None,
