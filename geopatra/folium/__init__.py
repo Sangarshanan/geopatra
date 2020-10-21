@@ -2,7 +2,7 @@
 
 from .geojson import geojson
 from .circle import circle
-from .chloropeth import chloropeth
+from .choropleth import choropleth
 from .markercluster import markercluster
 from .heatmap import heatmap
 
@@ -14,7 +14,7 @@ Build an interface for geodataframes to work natively with Folium
 Supported Maps
 -------------
   - Geojson plots (Just plot the geometries in geodataframes)
-  - Chloropeth maps 
+  - Choropleth maps
   - Markercluster (Count, Sum, Average)
   - Heatmaps 
 """
