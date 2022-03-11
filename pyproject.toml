@@ -12,10 +12,10 @@ documentation = "https://geopatra.readthedocs.io/"
 keywords = ["geopandas", "geospatial", "interactive maps"]
 
 [tool.poetry.dependencies]
-importlib-metadata = {version = "^1.0", python = "<3.8"}
-python = "^3.6"
+importlib-metadata = {version = "^1.0", python = ">=3.9"}
+python = "^3.9"
 folium = "^0.11.0"
-geopandas = "^0.8.0"
+geopandas = "^0.8.1"
 keplergl = "^0.1.2"
 
 [tool.poetry.dev-dependencies]
