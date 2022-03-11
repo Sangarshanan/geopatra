@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geopatra"
-version = "0.2.0"
+version = "0.3.0"
 description = "Interactive Maps with Geopandas"
 authors = ["sangarshanan <sangarshanan1998@gmail.com>"]
 
